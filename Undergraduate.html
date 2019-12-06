@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Undergraduate   - Department of Information Systems - UMBC</title>
+
+    <!-- Sets the viewport width to the width of the device, so media queries work -->
+    <!-- NOTE: We're locking the max scale (which prevents zooming) to fix bugs
+         during orientation changes on devices.  Our styles should accomodate this though. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="//sites.umbc.edu/wp-content/themes/umbc/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//sites.umbc.edu/wp-content/themes/umbc/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//sites.umbc.edu/wp-content/themes/umbc/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="//sites.umbc.edu/wp-content/themes/umbc/assets/site.webmanifest">
+    <link rel="mask-icon" href="//sites.umbc.edu/wp-content/themes/umbc/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-config" content="//sites.umbc.edu/wp-content/themes/umbc/assets/browserconfig.xml">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Template Styles -->
+    <link rel="stylesheet" type="text/css" href="//sites.umbc.edu/wp-content/themes/umbc/assets/stylesheets/base_logo.min.css?v=3" />
+        
+    <!-- Site-Specific Customizations -->
+    <style type="text/css">
+      #site-header {background-color: #000000;color: #ffffff;}
+      #site-header h1 {font-size: 38px;color: #ffffff;}
+      #site-header h1 a {color: #ffffff;}
+      #site-menu, #site-menu li a, #site-menu li ul {background-color: #fdb515;color: #000000;}
+      #site-menu li:hover a {background-color: #ffffcc;color: #000000;}
+      #site-menu li a:hover, #site-menu li a:focus {background-color: #fdb515;color: #000000;}
+      #site-menu .menu-arrow {color: #000000;}
+      #site-menu li:hover > a .menu-arrow {color: #000000;}
+      #site-footer {background-color: #fdb515;color: #000000;}
+      #site-footer .site-name {background-color: #000000;color: #ffffff;}
+      #site-footer a {color: #000000;}
+      .layout-default .page-container-inner, .layout-home .page-container-inner {background-color: #ffffcc;}
+      .layout-default .page-sidebar, .layout-home .page-sidebar, .sidebar-nav a {background-color: #ffffcc;color: #000000;}
+      .sidebar-nav a .secondary {color: #646464;}
+      .sidebar-nav > ul > li > a, .sidebar-nav > ul > li.current-menu-item > a, .sidebar-nav > ul > li.current-menu-ancestor > a {color: #000000;}
+      .sidebar-nav-header {color: #000000;}
+      .sidebar-nav a:hover, .sidebar-nav a:focus, .sidebar-nav a:hover .secondary, .sidebar-nav a:focus .secondary { background-color: #ffffff;border-bottom-color: #ffffff;border-top-color: #ffffff;color: #000000;}
+      .sidebar-nav .current-menu-item > a:hover > .menu-arrow, .sidebar-nav .current-menu-item > a:focus > .menu-arrow {color: #ffffff;}
+      .sidebar-nav .current-menu-item > a, .sidebar-nav .current-menu-item > a .secondary {background-color: #000000;color: #ffffff;}
+      .sidebar-nav .current-menu-item > a > .menu-arrow, .sidebar-nav .current-menu-item > a:hover > .menu-arrow, .sidebar-nav .current-menu-item > a:focus > .menu-arrow {color: #000000;}
+      .widget .widgettitle {background-color: #000000;color: #fdb515;}
+      .widget .widgettitle a {color: #fdb515;}
+      .widget > ul, .widget > .textwidget, .widget.widget_twitter_timeline {background-color: #cccccc;color: #000000;}
+      .widget.widget_twitter_timeline iframe { width: 100%; }
+      .widget > ul a, .widget > .textwidget a {color: #006699;}
+      .widget .rss-date, .widget .secondary, .widget_twitter > ul a.timesince {color: #000000;}
+      .widgetcorner, .widgetcorner .fill {background-color: #ffffcc;}
+      .layout-default .widgetcorner .corner {border-right-color: #000000;}
+      .layout-home .widgetcorner .corner {border-left-color: #000000;}
+            @media screen and (max-width: 767px) {
+        #mobile-site-menu-expander {background-color: #000000;color: #ffffff;}
+        .mobile-site-menu-expander-bar {background-color: #ffffff;}
+        #site-header {}
+        #site-header h1 {font-size: 19px;}
+        #site-menu li:hover a {background-color: #fdb515;color: #000000;}
+        .layout-default .page-sidebar, .layout-home .page-sidebar {background-color: #ffffcc;color: #000000;}
+        
+        #site-header.hide-text h1 .label { visibility: visible; }
+        #site-header.hide-text-mobile h1 .label { visibility: hidden; }
+
+        /* This is here to override any custom color set by the theme */
+        .layout-default .page-container-inner, .layout-home .page-container-inner { background-color: #fff; }
+      }
+          </style>
+    
+    <style>
+      .credly-badge { display: flex; margin-bottom: 18px; }
+      .credly-badge + .credly-badge { margin-top: 32px; }
+      .credly-badge__image { width: 150px; height: 150px; background-size: contain; }
+      .credly-badge__content { width: 100%; }
+      @media screen and (max-width: 767px) {
+        .credly-badge { flex-direction: column; align-items: center; }
+        .credly-badge__image-container { margin-bottom: 18px; }
+      }
+      @media screen and (min-width: 768px) {
+        .credly-badge__image-container { margin-right: 18px; margin-top: 0.5em; }
+      }
+    </style>
+    
+    
+        
+    <!-- Some custom styles just for older IE versions -->
+    <!--[if lte IE 8]>
+    <style>
+      #container { border: 1px solid #ddd; border-top: none; }
+      #site-footer .footer-field { float: left; }
+      #site-menu ul li a { border-left: none; }
+      #site-menu > ul > li > a .menu-arrow { display: none; }
+      .widget-slideshow .playlist li { float: left; display: block; overflow: hidden; }
+    </style>
+    <![endif]-->
+
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script async src="//sites.umbc.edu/wp-content/themes/umbc/assets/javascripts/wordpress.base.min.js?v=4"></script>
+        <link rel='dns-prefetch' href='//sites.umbc.edu' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='slideshow-style-css'  href='//sites.umbc.edu/wp-content/mu-plugins/slideshow/assets/slideshow.min.css?ver=1.1' type='text/css' media='all' />
+<script type='text/javascript' src='//sites.umbc.edu/wp-content/mu-plugins/slideshow/assets/slideshow.min.js?ver=1.0'></script>
+<link rel='https://api.w.org/' href='https://informationsystems.umbc.edu/wp-json/' />
+<meta name="generator" content="UMBC" />
+<link rel="canonical" href="https://informationsystems.umbc.edu/home/undergraduate-programs/" />
+<link rel="alternate" type="application/json+oembed" href="https://informationsystems.umbc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Finformationsystems.umbc.edu%2Fhome%2Fundergraduate-programs%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://informationsystems.umbc.edu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Finformationsystems.umbc.edu%2Fhome%2Fundergraduate-programs%2F&#038;format=xml" />
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-1045586-47', 'auto');
+      ga('create', 'UA-1045586-1', 'auto', {'name': 'umbcMain'});
+            // Site-specific Tracker
+      ga('create', 'UA-41867550-1', 'auto', {'name': 'siteSpecific'});
+      ga('siteSpecific.send', 'pageview');
+            ga('send', 'pageview');
+      ga('umbcMain.send', 'pageview');
+    </script>
+    
+    <script type="text/javascript">
+      function searchLoaded(){
+        google.search.CustomSearchControl.attachAutoCompletion(
+          '008589878477221853669:fglxypz-c8m+qptype:1',
+          document.getElementById('umbc-nav-search-query'),
+          'umbc-nav-search-input');
+      }
+      
+      function loadSearch(){
+        google.load( 'search', '1', { "callback" : searchLoaded } );
+      }
+      
+      (function(){
+        var script = document.createElement("script"); script.type = "text/javascript"; script.async = true;
+        script.src = "//www.google.com/jsapi?callback=loadSearch";
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+    
+    <script>
+      $(function(){
+        $('.menu a[href="#"]').on('click', function(e){
+          e.preventDefault();
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <body id="home">
+            
+        <div id="skip-content"><a href="#main-content">Skip to Main Content</a></div>
+    <div id="container">
+      <header id="umbc-header">
+        <div id="umbc-logo"><a href="http://umbc.edu" title="UMBC: An Honors University in Maryland"><svg id="UMBC-Header-Logo" data-name="UMBC-Header-Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.14 82.16"><title>UMBC</title><path d="M64.59,12C53.35,6.16,38.66,5.86,35.84,5.86H34.91c-2.83,0-17.51.29-28.76,6.11l-1.55.8V45.45A32.31,32.31,0,0,0,9.08,58.29c3.64,6.14,11,14.27,25.56,18.09l0.73,0.19,0.73-.19C50.63,72.56,58,64.44,61.66,58.29a32.31,32.31,0,0,0,4.48-12.84V12.77ZM63.28,45.24S61.68,66.7,35.37,73.61C9.06,66.7,7.46,45.24,7.46,45.24V14.52C18.13,9,32.19,8.73,34.91,8.73h0.93c2.72,0,16.78.28,27.44,5.79V45.24Z"/><path d="M35.37,8.73H34.91c-2.72,0-16.78.28-27.44,5.79V45.24S9.06,66.7,35.37,73.61C61.68,66.7,63.28,45.24,63.28,45.24V14.52C52.61,9,38.55,8.73,35.84,8.73H35.37ZM60.24,40.88v3.71S58.82,63.72,35.37,69.87a41.47,41.47,0,0,1-8.63-3.28,32.26,32.26,0,0,1-8.63-6.41A27.93,27.93,0,0,1,10.5,44.59V17.21h0a39.84,39.84,0,0,1,7.61-2.91,61.28,61.28,0,0,1,8.63-1.7,65.56,65.56,0,0,1,8.63-.55s14.31-.3,24.87,5.16V40.88Z" style="fill:#bfbfbf"/><path d="M26.74,32.67V12.6a61.28,61.28,0,0,0-8.63,1.7V24.45Z"/><path d="M18.11,14.3a39.84,39.84,0,0,0-7.61,2.91l7.61,7.25V14.3Z" style="fill:#fdb515"/><polygon points="18.11 24.45 18.11 41.17 26.74 49.38 26.74 32.66 18.11 24.45" style="fill:#fdb515"/><polygon points="18.11 24.45 10.5 17.21 10.5 17.21 10.5 33.92 18.11 41.17 18.11 24.45"/><path d="M35.37,40.88V12.05a65.56,65.56,0,0,0-8.63.55V32.67Z" style="fill:#fdb515"/><polygon points="26.74 49.38 35.37 57.59 35.37 40.88 26.74 32.66 26.74 49.38"/><path d="M56.64,44.49H54v2a3.71,3.71,0,0,1-3.25,3.75,3.61,3.61,0,0,1-4-3.59V44.49H39V54h2a3.71,3.71,0,0,1,3.74,3.25,3.61,3.61,0,0,1-3.59,4H39v2.65a3.61,3.61,0,0,1-3.61,3.61v2.38c23.45-6.16,24.87-25.28,24.87-25.28V40.88A3.61,3.61,0,0,1,56.64,44.49Z" style="fill:#fff"/><path d="M35.37,57.59l-8.63-8.21V66.59a41.47,41.47,0,0,0,8.63,3.28V57.59Z" style="fill:#fdb515"/><path d="M35.37,12.05v2.21A3.61,3.61,0,0,1,39,17.87v2.65H41.1a3.61,3.61,0,0,1,3.59,4,3.71,3.71,0,0,1-3.74,3.25H39v9.54h7.8V35.15a3.61,3.61,0,0,1,4-3.59A3.71,3.71,0,0,1,54,35.31v2h2.65a3.61,3.61,0,0,1,3.61,3.61V17.21C49.68,11.75,35.37,12.05,35.37,12.05Z" style="fill:#da2128"/><path d="M18.11,41.17v19a32.26,32.26,0,0,0,8.63,6.41V49.38Z"/><path d="M10.5,33.92V44.59a27.93,27.93,0,0,0,7.61,15.59v-19Z" style="fill:#fdb515"/><path d="M56.64,37.27H54v-2a3.71,3.71,0,0,0-3.25-3.74,3.61,3.61,0,0,0-4,3.59v2.12H39V27.73h2a3.71,3.71,0,0,0,3.74-3.25,3.61,3.61,0,0,0-3.59-4H39V17.87a3.61,3.61,0,0,0-3.61-3.61V40.88H60.24A3.61,3.61,0,0,0,56.64,37.27Z" style="fill:#fff"/><path d="M35.37,57.59v9.9A3.61,3.61,0,0,0,39,63.89V61.24H41.1a3.61,3.61,0,0,0,3.59-4A3.71,3.71,0,0,0,40.94,54H39V44.49h7.8V46.6a3.61,3.61,0,0,0,4,3.59A3.71,3.71,0,0,0,54,46.45v-2h2.65a3.61,3.61,0,0,0,3.61-3.61H35.37V57.59Z" style="fill:#da2128"/><path d="M110.32,75.08c-4,0-11.56-.76-17-5.86C90,66,86.18,60.66,86.18,47.63V35.81c0-12.6,0-14.87-.16-17.45s-0.63-3.69-3.14-4.22a14.69,14.69,0,0,0-2.66-.23A1,1,0,0,1,79.14,13c0-1.08,1.21-1.08,1.72-1.08,2.51,0,5.68.12,7.57,0.19l1.73,0.06,1.94-.07h0.07c1.89-.07,4.43-0.17,6-0.17,0.52,0,1.72,0,1.72,1.08a1,1,0,0,1-1.08.91,11.57,11.57,0,0,0-1.91.23c-1.84.27-2.51,1.34-2.68,4.22-0.16,2.58-.16,4.85-0.16,17.45V47.14c0,12.35,3,16.88,5.94,19.67,3.84,3.61,7.41,4.33,11.92,4.33a16.49,16.49,0,0,0,12.37-5.67c3.22-4,4.59-9.84,4.59-19.55V35.81c0-12.6,0-14.87-.16-17.45s-0.63-3.69-3.14-4.22a14.68,14.68,0,0,0-2.66-.23,1,1,0,0,1-1.08-.91c0-1.08,1.21-1.08,1.72-1.08,2.67,0,5.77.13,7.43,0.2l1.15,0,1.3-.05h0.1c1.5-.07,3.75-0.18,5.39-0.18,0.52,0,1.72,0,1.72,1.08a1,1,0,0,1-1.08.91,6.67,6.67,0,0,0-1.92.23c-1.86.35-2.51,1.37-2.67,4.22-0.16,2.58-.16,4.85-0.16,17.45v8.66c0,15.76-4.05,21.38-7.59,24.51A24.25,24.25,0,0,1,110.32,75.08Z" style="fill:#231f20"/><path d="M233.53,74.19c-1.16,0-4.8-.19-7.46-0.33l-0.33,0c-1.54-.08-2.75-0.14-3-0.14l-1.33,0c-1.15,0-21.07.08-22.64,0.08-0.52,0-1.72,0-1.72-1.08a1,1,0,0,1,1.08-.91,11.83,11.83,0,0,0,2.33-.31c0.2,0,1.16-.35.82-2.73l-3.79-40.62L177.61,70.44c-1.31,2.77-1.58,3.35-2.49,3.35s-1.17-.7-2.72-3.63l-0.17-.32c-0.88-1.66-3.19-6.18-9.21-18.25l-0.26-.53c-0.77-1.53-8.32-17.73-10.29-22.15l-3.14,36.48c-0.08,1.27-.08,2.7-0.08,4.09A2.16,2.16,0,0,0,151,71.56a14.48,14.48,0,0,0,3,.4,1,1,0,0,1,1.08.83c0,1.16-1.32,1.16-1.89,1.16-2.06,0-4.48-.11-6.08-0.19H147l-1.33-.05-1.68.07h-0.13c-1.53.07-3.6,0.17-5,.17-1.2,0-1.8-.39-1.8-1.16A1.07,1.07,0,0,1,138.3,72a10,10,0,0,0,2.34-.23c2.28-.41,2.56-3.15,2.86-6l0-.3,5.83-52.76c0.1-.56.33-1.84,1.32-1.84a1.93,1.93,0,0,1,1.6,1.46l24.36,50.08,23.41-50c0.26-.57.69-1.54,1.6-1.54s1.25,1.21,1.4,2.57L208.47,63c0.3,2.69.8,7.16,4.07,8.21a9,9,0,0,0,4,.34c1.37-.41,1.7-2,2-4,0.4-3.37.4-9.6,0.4-17.5V35.81c0-12.6,0-14.87-.16-17.45s-0.64-3.69-3.14-4.22a14.68,14.68,0,0,0-2.66-.23,1,1,0,0,1-1.08-.91c0-1.08,1.21-1.08,1.72-1.08,2.68,0,6.24.14,7.95,0.2l0.42,0,0.78,0h0c0.82,0,1.88,0,3-.09,1.63-.07,3.64-0.15,5.8-0.15,13.11,0,16.61,7.9,16.61,12.57,0,6.61-3.79,10.75-7.25,14.37a23.06,23.06,0,0,1,8.77,5.58,16.61,16.61,0,0,1,4.87,11.69,17.35,17.35,0,0,1-5.26,12.37C245.5,72.22,240,74.19,233.53,74.19Zm-7.25-32.77s0,0.05,0,.13v4.61c0,6.08,0,16.25.08,17.45l0,0.32c0.22,3.69.28,4.56,2.49,5.63s6.18,1.17,6.93,1.17c5.07,0,11-2.9,11-11.06,0-3.17-.75-11.07-7.66-15.83a12.94,12.94,0,0,0-6.49-2.27c-0.72-.11-2.83-0.16-6.29-0.16h-0.05ZM230.7,15a17.89,17.89,0,0,0-3.78.39c-0.65.14-.65,0.28-0.65,0.47V37.59c0,0.37,0,.39.3,0.49a30.3,30.3,0,0,0,4.78.29c4.52,0,5.45-.14,7-2a12.09,12.09,0,0,0,2.81-7.89C241.2,22.31,238.45,15,230.7,15Z" style="fill:#231f20"/><path d="M292.84,75.08c-11.7,0-20.27-2.81-27-8.85S255.92,52.16,255.92,42a32.82,32.82,0,0,1,9.19-22.39c5.91-5.91,14.08-8.78,25-8.78a70.38,70.38,0,0,1,11.81,1l0.23,0a68,68,0,0,0,8,1.17,1.31,1.31,0,0,1,1.45,1.32,8.94,8.94,0,0,1-.1,1.05c-0.09.7-.21,1.75-0.31,3.5-0.09,1.53-.13,3.67-0.16,5.39,0,1.33,0,2.42-.08,2.95-0.05.84-.14,2.1-1.16,2.1s-1.08-1.18-1.08-2.13a10.83,10.83,0,0,0-3.25-7.93c-2.62-2.25-8.55-4.51-15.91-4.51-12.36,0-16.84,4.35-18.31,5.79-6.3,6-7.15,13.91-7.15,20.81a30,30,0,0,0,8,20.31,28.18,28.18,0,0,0,20.79,8.88c8.74,0,11.79-1.88,13.77-3.92,1.63-1.71,2.64-5.16,2.88-6.57,0.12-.67.29-1.57,1.23-1.57,0.3,0,1,.16,1,1.64a83,83,0,0,1-1.8,10.48,3.16,3.16,0,0,1-2.34,2.62C304.08,74.58,297.68,75.08,292.84,75.08Z" style="fill:#231f20"/></svg><span>UMBC: An Honors University in Maryland</span></a></div>
+        <nav role="navigation" id="umbc-nav" >
+          <div id="umbc-nav-items-container">
+            <ul id="umbc-nav-items">
+              <li id="umbc-nav-myumbc"><a href="http://my.umbc.edu">myUMBC</a></li>
+              <li id="umbc-nav-events"><a href="http://my.umbc.edu/events">Events</a></li>
+              <li id="umbc-nav-directory"><a href="http://umbc.edu/go/directory">Directory</a></li>
+            </ul>
+          </div>
+          <form role="search" id="umbc-nav-search-input" action="https://www.umbc.edu/stats/searchthru/" method="get">
+            <label for="umbc-nav-search-query">Search UMBC</label>
+            <input type="hidden" name="cx" value="008589878477221853669:fglxypz-c8m" />
+            <input type="hidden" name="ie" value="UTF-8" />
+            <input id="umbc-nav-search-query" type="text" autocomplete="off" name="q" size="250" maxlength="250" placeholder="Enter Search Terms" title="Enter Search Terms">
+            <input id="umbc-nav-search-submit" name="submit" type="submit" value="" aria-label="Search">
+          </form>
+        </nav>
+      </header>
+
+      <header role="banner" id="site-header" class="  ">
+                <a href="#" id="mobile-site-menu-expander" aria-controls="menu-main" aria-label="Navigation Menu">
+          <span class="mobile-site-menu-expander-bar"></span>
+          <span class="mobile-site-menu-expander-bar"></span>
+          <span class="mobile-site-menu-expander-bar"></span>
+        </a>
+                
+        <h1><a href="https://informationsystems.umbc.edu"><span class="label">Department of Information Systems</span></a></h1>
+        
+      </header>
+
+            <nav role="navigation" id="site-menu">
+        <ul id="menu-main" class="menu"><li id="menu-item-89" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor current-page-parent menu-item-89"><a href="https://informationsystems.umbc.edu/">Home</a></li>
+<li id="menu-item-2265" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2265"><a href="https://informationsystems.umbc.edu/about/">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-4700" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4700"><a href="https://informationsystems.umbc.edu/about/message-from-the-chair/">Message from the Chair</a></li>
+	<li id="menu-item-789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="https://informationsystems.umbc.edu/about/department-of-information-systems-faq/">FAQ</a></li>
+	<li id="menu-item-3053" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3053"><a href="https://informationsystems.umbc.edu/about/employment-opportunities/">Employment Opportunities</a></li>
+</ul>
+</li>
+<li id="menu-item-111" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-107 current_page_item menu-item-has-children menu-item-111"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/">Undergraduate</a>
+<ul class="sub-menu">
+	<li id="menu-item-292" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-292"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/">Undergraduate Degree Programs</a>
+	<ul class="sub-menu">
+		<li id="menu-item-968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/bachelor-of-arts-in-business-technology-administration/">BA in Business Technology Administration</a></li>
+		<li id="menu-item-975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-975"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/bachelor-of-science-in-information-systems/">Bachelor of Science in Information Systems</a></li>
+		<li id="menu-item-997" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-997"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/combined-bachelor-of-arts-in-business-technology-administrationhuman-centered-computing-master-of-science/">Combined BA in Business Technology Administration/Human-Centered Computing MS</a></li>
+		<li id="menu-item-996" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-996"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/combined-bachelor-of-sciencemaster-of-science/">Combined Bachelor of Science/Master of Science</a></li>
+		<li id="menu-item-1007" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1007"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/minor-in-information-systems/">Minor in Information Systems</a></li>
+		<li id="menu-item-2171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2171"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/the-alex-brown-center-entrepreneurship-and-innovation-minor/">Entrepreneurship and Innovation Minor</a></li>
+		<li id="menu-item-1139" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1139"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/combined-bachelor-of-sciencehuman-centered-computing-master-of-science/">Combined Bachelor of Science/Human Centered Computing Master of Science</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3316" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3316"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/certificate-programs/">Certificate Programs</a>
+	<ul class="sub-menu">
+		<li id="menu-item-310" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-310"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-upper-division-certificates/">IS Upper Division Certificates</a></li>
+		<li id="menu-item-356" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-356"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-management-and-business-program/">Management Certificates</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3375"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-course-listing/">Undergraduate Course Listing</a></li>
+	<li id="menu-item-3568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3568"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-forms/">Undergraduate Forms</a></li>
+	<li id="menu-item-768" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-768"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/academic-honors-scholarships-and-resources/">Academic Honors, Scholarships and Resources</a></li>
+	<li id="menu-item-780" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-780"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-research-opportunities/">Undergraduate Research Opportunities</a></li>
+</ul>
+</li>
+<li id="menu-item-145" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-145"><a href="https://informationsystems.umbc.edu/home/graduate-programs/">Graduate Programs</a>
+<ul class="sub-menu">
+	<li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-403"><a href="https://informationsystems.umbc.edu/home/graduate-programs/master-of-science-programs/">Master&#8217;s Programs</a>
+	<ul class="sub-menu">
+		<li id="menu-item-834" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-834"><a href="https://informationsystems.umbc.edu/home/graduate-programs/master-of-science-programs/master-of-science-in-information-systems/">Master of Science in Information Systems</a></li>
+		<li id="menu-item-1235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1235"><a href="https://informationsystems.umbc.edu/home/graduate-programs/online-masters-in-information-systems/">Online Master&#8217;s in Information Systems</a></li>
+		<li id="menu-item-842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842"><a href="https://informationsystems.umbc.edu/home/graduate-programs/master-of-science-programs/master-of-science-in-human-centered-computing-hcc/">Master of Science in Human-Centered Computing (HCC)</a></li>
+		<li id="menu-item-3981" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3981"><a href="https://informationsystems.umbc.edu/masters-of-professional-studies-in-health-it/">Master&#8217;s of Professional Studies in Health IT</a></li>
+	</ul>
+</li>
+	<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-408"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/">Doctor of Philosophy Programs</a>
+	<ul class="sub-menu">
+		<li id="menu-item-3784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3784"><a href="https://informationsystems.umbc.edu/doctor-of-philosophy-in-information-systems-page-1/">Doctor of Philosophy in Information Systems</a></li>
+		<li id="menu-item-950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-950"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/doctor-of-philosophy-in-information-systems/is-comprehensive-review-policy/">IS Comprehensive Review Policy</a></li>
+		<li id="menu-item-3131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3131"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/doctor-of-philosophy-in-human-centered-computing-hcc/">Doctor of Philosophy in Human-Centered Computing (HCC)</a></li>
+		<li id="menu-item-855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-855"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/human-centered-computing-comprehensive-review-policy/">Human-Centered Computing Comprehensive Review Policy</a></li>
+		<li id="menu-item-1250" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1250"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/academic-integrity-policies-for-phd-comprehensive-exams-both-is-and-hcc-phd-programs/">Academic Integrity Policies for PhD Comprehensive Exams (BOTH IS and HCC PhD Programs)</a></li>
+	</ul>
+</li>
+	<li id="menu-item-3373" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3373"><a href="https://informationsystems.umbc.edu/home/graduate-programs/graduate-forms/">Graduate Program Forms</a></li>
+	<li id="menu-item-4517" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4517"><a href="http://catalog.umbc.edu/#home">Course Catalog</a></li>
+</ul>
+</li>
+<li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-186"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/">People</a>
+<ul class="sub-menu">
+	<li id="menu-item-687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-687"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/faculty/">Full Time Faculty</a></li>
+	<li id="menu-item-1146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/part-time-faculty/">Part Time Faculty</a></li>
+	<li id="menu-item-4831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4831"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/adjunct-faculty/">Adjunct Faculty Recruitment</a></li>
+	<li id="menu-item-1154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1154"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/special-status-faculty/">Special Status Faculty</a></li>
+	<li id="menu-item-624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-624"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/staff/">Staff</a></li>
+	<li id="menu-item-621" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-621"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/graduate-and-research-assistants/">Graduate and Research Assistants</a></li>
+</ul>
+</li>
+<li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-189"><a href="https://informationsystems.umbc.edu/home/research/">Research</a>
+<ul class="sub-menu">
+	<li id="menu-item-1578" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1578"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/">Areas of Research</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1583"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/artificial-intelligence-and-knowledge-management/">Artificial Intelligence and Knowledge Management</a></li>
+		<li id="menu-item-1595" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1595"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/database-and-datamining/">Data Science</a></li>
+		<li id="menu-item-1611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1611"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/hit/">Health Information Technology</a></li>
+		<li id="menu-item-1608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1608"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/human-centered-computing/">Human-Centered Computing</a></li>
+		<li id="menu-item-1628" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1628"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/systems-and-software/">Software Engineering</a></li>
+	</ul>
+</li>
+	<li id="menu-item-660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="https://informationsystems.umbc.edu/home/research/current-extramural-funded-projects/">Externally Funded Projects</a></li>
+	<li id="menu-item-4688" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4688"><a href="https://informationsystems.umbc.edu/home/research/seminar-series/">Research Seminar Series</a></li>
+</ul>
+</li>
+</ul>      </nav>
+            
+            <a name="main-content"></a><section class="page-container layout-default">
+  <section class="page-content">
+    <section class="main-content">
+              <header>
+          <h1>Undergraduate</h1>
+        </header>
+                  <article role="main">
+                <p>UMBC is ranked a Top 10 Most Innovative School by U.S. News and World Report. The Information Systems Department continues that proud tradition in our undergraduate programs and courses. We offer a variety of majors, minors, and certificates to help you reach your potential.</p>
+                      </article>
+    </section>
+  </section>
+    <section class="page-sidebar">
+    <nav role="navigation" class="sidebar-nav">
+      <ul id="menu-main-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor current-page-parent menu-item-89"><a href="https://informationsystems.umbc.edu/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2265"><a href="https://informationsystems.umbc.edu/about/">About</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4700"><a href="https://informationsystems.umbc.edu/about/message-from-the-chair/">Message from the Chair</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="https://informationsystems.umbc.edu/about/department-of-information-systems-faq/">FAQ</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3053"><a href="https://informationsystems.umbc.edu/about/employment-opportunities/">Employment Opportunities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-107 current_page_item menu-item-has-children menu-item-111"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/">Undergraduate</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-292"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/">Undergraduate Degree Programs</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/bachelor-of-arts-in-business-technology-administration/">BA in Business Technology Administration</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-975"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/bachelor-of-science-in-information-systems/">Bachelor of Science in Information Systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-997"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/combined-bachelor-of-arts-in-business-technology-administrationhuman-centered-computing-master-of-science/">Combined BA in Business Technology Administration/Human-Centered Computing MS</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-996"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/combined-bachelor-of-sciencemaster-of-science/">Combined Bachelor of Science/Master of Science</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1007"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/minor-in-information-systems/">Minor in Information Systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2171"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/the-alex-brown-center-entrepreneurship-and-innovation-minor/">Entrepreneurship and Innovation Minor</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1139"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-degree-programs/combined-bachelor-of-sciencehuman-centered-computing-master-of-science/">Combined Bachelor of Science/Human Centered Computing Master of Science</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3316"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/certificate-programs/">Certificate Programs</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-310"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-upper-division-certificates/">IS Upper Division Certificates</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-356"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-management-and-business-program/">Management Certificates</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3375"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-course-listing/">Undergraduate Course Listing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3568"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-forms/">Undergraduate Forms</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-768"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/academic-honors-scholarships-and-resources/">Academic Honors, Scholarships and Resources</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-780"><a href="https://informationsystems.umbc.edu/home/undergraduate-programs/undergraduate-research-opportunities/">Undergraduate Research Opportunities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-145"><a href="https://informationsystems.umbc.edu/home/graduate-programs/">Graduate Programs</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-403"><a href="https://informationsystems.umbc.edu/home/graduate-programs/master-of-science-programs/">Master&#8217;s Programs</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-834"><a href="https://informationsystems.umbc.edu/home/graduate-programs/master-of-science-programs/master-of-science-in-information-systems/">Master of Science in Information Systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1235"><a href="https://informationsystems.umbc.edu/home/graduate-programs/online-masters-in-information-systems/">Online Master&#8217;s in Information Systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842"><a href="https://informationsystems.umbc.edu/home/graduate-programs/master-of-science-programs/master-of-science-in-human-centered-computing-hcc/">Master of Science in Human-Centered Computing (HCC)</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3981"><a href="https://informationsystems.umbc.edu/masters-of-professional-studies-in-health-it/">Master&#8217;s of Professional Studies in Health IT</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-408"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/">Doctor of Philosophy Programs</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3784"><a href="https://informationsystems.umbc.edu/doctor-of-philosophy-in-information-systems-page-1/">Doctor of Philosophy in Information Systems</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-950"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/doctor-of-philosophy-in-information-systems/is-comprehensive-review-policy/">IS Comprehensive Review Policy</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3131"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/doctor-of-philosophy-in-human-centered-computing-hcc/">Doctor of Philosophy in Human-Centered Computing (HCC)</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-855"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/human-centered-computing-comprehensive-review-policy/">Human-Centered Computing Comprehensive Review Policy</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1250"><a href="https://informationsystems.umbc.edu/home/graduate-programs/doctor-of-philosophy-programs/academic-integrity-policies-for-phd-comprehensive-exams-both-is-and-hcc-phd-programs/">Academic Integrity Policies for PhD Comprehensive Exams (BOTH IS and HCC PhD Programs)</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3373"><a href="https://informationsystems.umbc.edu/home/graduate-programs/graduate-forms/">Graduate Program Forms</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4517"><a href="http://catalog.umbc.edu/#home">Course Catalog</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-186"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/">People</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-687"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/faculty/">Full Time Faculty</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/part-time-faculty/">Part Time Faculty</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4831"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/adjunct-faculty/">Adjunct Faculty Recruitment</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1154"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/special-status-faculty/">Special Status Faculty</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-624"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/staff/">Staff</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-621"><a href="https://informationsystems.umbc.edu/home/faculty-and-staff/graduate-and-research-assistants/">Graduate and Research Assistants</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-189"><a href="https://informationsystems.umbc.edu/home/research/">Research</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1578"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/">Areas of Research</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1583"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/artificial-intelligence-and-knowledge-management/">Artificial Intelligence and Knowledge Management</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1595"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/database-and-datamining/">Data Science</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1611"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/hit/">Health Information Technology</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1608"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/human-centered-computing/">Human-Centered Computing</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1628"><a href="https://informationsystems.umbc.edu/home/research/areas-of-research/systems-and-software/">Software Engineering</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="https://informationsystems.umbc.edu/home/research/current-extramural-funded-projects/">Externally Funded Projects</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4688"><a href="https://informationsystems.umbc.edu/home/research/seminar-series/">Research Seminar Series</a></li>
+</ul>
+</li>
+</ul>    </nav>
+    <section class="sidebar-widgets">
+          </section>
+  </section></section>
+      
+      <footer role="contentinfo" id="site-footer">
+           
+      </footer>   
+    </div> <!-- #container -->
+    <footer role="contentinfo" id="umbc-footer">
+      <div id="umbc-footer-logo"><a href="https://umbc.edu" title="UMBC: An Honors University in Maryland"><svg id="UMBC-Footer-Logo" data-name="UMBC-Footer-Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 521 137"><title>UMBC</title><path d="M106.5,21C88,11.5,63.9,11,59.3,11H57.7c-4.6,0-28.7.5-47.2,10L8,22.3V76c0,0.4.8,10,7.4,21.1,6,10.1,18.1,23.4,41.9,29.7l1.2,0.3,1.2-.3c23.8-6.3,36-19.6,41.9-29.7A55.62,55.62,0,0,0,109,76V22.3Zm-2.2,54.6s-2.6,35.2-45.8,46.5C15.3,110.8,12.7,75.6,12.7,75.6V25.2c17.5-9,40.6-9.5,45-9.5h1.6c4.5,0,27.5.5,45,9.5V75.6Z" style="fill:#666"/><polygon points="30.2 41.5 30.2 68.9 44.3 82.4 44.3 55 30.2 41.5" style="fill:#666"/><path d="M99.9,28.4C84,20.2,63.2,19.8,59.2,19.8H57.9a119.69,119.69,0,0,0-13.7.9,102,102,0,0,0-14.4,2.8A71.07,71.07,0,0,0,17,28.4l-0.7.4V74.5c0,0.7,1.2,14.2,12.9,26.5a54.88,54.88,0,0,0,14.5,10.8,72.81,72.81,0,0,0,14.4,5.5l0.3,0.1,0.3-.1C79,112,89.3,100.7,94.3,92.2a46.15,46.15,0,0,0,6.2-17.5V28.9ZM57.8,95.2L44.3,82.4v28.2a54,54,0,0,1-14.2-10.5V68.9L17.7,57h0V29.6h0L30.2,41.5V24.8A107.43,107.43,0,0,1,44.4,22V55L57.9,67.8V95.2H57.8ZM99.3,68.4a5.85,5.85,0,0,1-5.9,5.9H89.1v3.2a6,6,0,0,1-5.3,6.1,5.94,5.94,0,0,1-6.5-5.9V74.2H64.5V90h3.2a6,6,0,0,1,6.1,5.3,5.94,5.94,0,0,1-5.9,6.5H64.4v4.3a6,6,0,0,1-5.3,5.9V68.4H99.3a5.85,5.85,0,0,0-5.9-5.9H89.1V59.3a6,6,0,0,0-5.3-6.1,5.94,5.94,0,0,0-6.5,5.9v3.5H64.5V46.9h3.2a6,6,0,0,0,6.1-5.3,5.94,5.94,0,0,0-5.9-6.5H64.4V30.8a6,6,0,0,0-5.3-5.9V21.2h0c4,0,24.5.4,40.1,8.5V68.4h0.1Z" style="fill:#666"/><path d="M181.5,124.6c-6.6,0-19-1.2-27.8-9.6-5.5-5.3-11.8-14-11.8-35.4V60.2c0-20.7,0-24.4-.3-28.6s-1-6.1-5.2-6.9a20.58,20.58,0,0,0-4.4-.4,1.61,1.61,0,0,1-1.8-1.5c0-1.8,2-1.8,2.8-1.8,4.1,0,9.3.2,12.4,0.3,1.5,0.1,2.5.1,2.8,0.1s1.6,0,3.2-.1h0.1c3.1-.1,7.3-0.3,9.8-0.3,0.8,0,2.8,0,2.8,1.8a1.61,1.61,0,0,1-1.8,1.5,14.46,14.46,0,0,0-3.1.4c-3,.4-4.1,2.2-4.4,6.9-0.3,4.2-.3,8-0.3,28.6V78.8c0,20.3,4.9,27.7,9.7,32.3,6.3,5.9,12.2,7.1,19.6,7.1a27.2,27.2,0,0,0,20.3-9.3c5.3-6.5,7.5-16.1,7.5-32.1V60.2c0-20.7,0-24.4-.3-28.6s-1-6.1-5.2-6.9a20.58,20.58,0,0,0-4.4-.4,1.61,1.61,0,0,1-1.8-1.5c0-1.8,2-1.8,2.8-1.8,4.4,0,9.5.2,12.2,0.3,1,0,1.7.1,1.9,0.1a20.74,20.74,0,0,0,2.1-.1h0.2c2.5-.1,6.2-0.3,8.9-0.3,0.8,0,2.8,0,2.8,1.8a1.61,1.61,0,0,1-1.8,1.5,10,10,0,0,0-3.1.4c-3.1.6-4.1,2.2-4.4,6.9-0.3,4.2-.3,8-0.3,28.6V74.4c0,25.9-6.7,35.1-12.5,40.2C199.2,123.5,188.6,124.6,181.5,124.6Z" style="fill:#666"/><path d="M383.7,123.1c-1.9,0-7.9-.3-12.2-0.5H371c-2.5-.1-4.5-0.2-4.9-0.2-0.2,0-1,0-2.2.1-1.9.1-34.6,0.1-37.1,0.1-0.8,0-2.8,0-2.8-1.8a1.56,1.56,0,0,1,1.8-1.5,19.87,19.87,0,0,0,3.8-.5c0.3-.1,1.9-0.6,1.3-4.5l-6.2-66.7L291.9,117c-2.2,4.5-2.6,5.5-4.1,5.5-1.3,0-1.9-1.1-4.5-6L283,116c-1.4-2.7-5.2-10.1-15.1-30l-0.4-.9c-1.3-2.5-13.7-29.1-16.9-36.3l-5.2,59.9c-0.1,2.1-.1,4.4-0.1,6.7a3.44,3.44,0,0,0,2.9,3.4,26.22,26.22,0,0,0,4.9.7,1.61,1.61,0,0,1,1.8,1.4c0,1.9-2.2,1.9-3.1,1.9-3.4,0-7.4-.2-10-0.3h-0.2c-1.1,0-1.9-.1-2.2-0.1s-1.4,0-2.8.1h-0.2c-2.5.1-5.9,0.3-8.2,0.3-2,0-3-.6-3-1.9,0-.9,1-1.4,2-1.4a15.55,15.55,0,0,0,3.8-.4c3.7-.7,4.2-5.2,4.7-9.9l0.1-.5,9.6-86.6c0.2-.9.5-3,2.2-3,1.4,0,2.1,1.2,2.6,2.4l40,82.2,38.4-82.1c0.4-.9,1.1-2.5,2.6-2.5,1.7,0,2.1,2,2.3,4.2l8.9,81.5c0.5,4.4,1.3,11.8,6.7,13.5a16.85,16.85,0,0,0,6.6.6c2.3-.7,2.8-3.3,3.2-6.6,0.7-5.5.7-15.8,0.7-28.7V60.2c0-20.7,0-24.4-.3-28.6s-1-6.1-5.2-6.9a20.58,20.58,0,0,0-4.4-.4,1.62,1.62,0,0,1-1.8-1.5c0-1.8,2-1.8,2.8-1.8,4.4,0,10.2.2,13,.3h2c1.3,0,3.1-.1,5-0.2,2.7-.1,6-0.2,9.5-0.2,21.5,0,27.3,13,27.3,20.6,0,10.9-6.2,17.6-11.9,23.6A39,39,0,0,1,410,74.3a27.46,27.46,0,0,1,8,19.2,28.29,28.29,0,0,1-8.6,20.3C403.3,119.9,394.4,123.1,383.7,123.1ZM371.8,69.3v7.8c0,10,0,26.7.1,28.6v0.5c0.4,6,.5,7.5,4.1,9.2,3.8,1.8,10.1,1.9,11.4,1.9,8.3,0,18-4.8,18-18.2,0-5.2-1.2-18.2-12.6-26a21.7,21.7,0,0,0-10.7-3.7c-1.1,0-4.5-.1-10.3-0.1h0ZM379,26.1a29.09,29.09,0,0,0-6.2.6c-1.1.2-1.1,0.5-1.1,0.8V63.1a0.64,0.64,0,0,0,.5.8,49,49,0,0,0,7.8.5c7.4,0,8.9-.2,11.6-3.2a19.92,19.92,0,0,0,4.6-12.9C396.3,38,391.8,26.1,379,26.1Z" style="fill:#666"/><path d="M481,124.6c-19.2,0-33.3-4.6-44.3-14.5-10.8-9.7-16.3-23.1-16.3-39.8,0-10.5,4-25.6,15.1-36.7,9.7-9.7,23.1-14.4,41-14.4a121.11,121.11,0,0,1,19.4,1.6l0.4,0.1a98.52,98.52,0,0,0,13.1,1.9c1,0.1,2.4.4,2.4,2.2a12.76,12.76,0,0,1-.2,1.7c-0.1,1.1-.3,2.9-0.5,5.7-0.2,2.5-.2,6-0.3,8.8,0,2.2-.1,4-0.1,4.8-0.1,1.4-.2,3.4-1.9,3.4s-1.8-1.9-1.8-3.5c0-5.1-2.1-10.3-5.3-13-4.3-3.7-14-7.4-26.1-7.4-20.3,0-27.6,7.1-30,9.5-10.3,9.9-11.7,22.8-11.7,34.2A49.27,49.27,0,0,0,447,102.5a46.16,46.16,0,0,0,34.1,14.6c14.3,0,19.3-3.1,22.6-6.4,2.7-2.8,4.3-8.5,4.7-10.8,0.2-1.1.5-2.6,2-2.6,0.5,0,1.6.3,1.6,2.7a144.64,144.64,0,0,1-2.9,17.2c-0.9,2.7-1.2,3.1-3.8,4.3C499.5,123.8,489,124.6,481,124.6Z" style="fill:#666"/></svg><span>UMBC: An Honors University in Maryland</span></a></div>
+      <nav id="umbc-footer-nav">
+        <ul id="umbc-footer-nav-items">
+          <li><a href="https://about.umbc.edu/">About UMBC</a></li>
+          <li><a href="https://about.umbc.edu/visitors-guide/contact-us/">Contact Us</a></li>
+          <li><a href="https://umbc.edu/go/equal-opportunity">Equal Opportunity</a></li>
+          <li><a href="https://enrollment.umbc.edu/consumer_info/">Consumer Information</a></li>
+                    <li>
+            <span class="umbc-footer-social-icon"><a href="https://www.facebook.com/umbcpage" aria-label="UMBC Facebook Page"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z" /></svg></a></span><span class="umbc-footer-social-icon"><a href="https://twitter.com/umbc" aria-label="UMBC Twitter Page"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" /></svg></a></span><span class="umbc-footer-social-icon"><a href="https://www.instagram.com/umbclife/" aria-label="UMBC Instagram Page"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg></a></span><span class="umbc-footer-social-icon"><a href="https://www.youtube.com/user/UMBCtube/" aria-label="UMBC YouTube Channel"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" /></svg></a></span>
+          </li>
+        </ul>
+      </nav>
+      <div id="umbc-footer-info">&copy; University of Maryland, Baltimore County <span class="bullet">&bull;</span> 1000 Hilltop Circle <span class="bullet">&bull;</span> Baltimore, MD 21250</div>
+    </footer>
+    <script type='text/javascript' src='https://informationsystems.umbc.edu/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+    <!-- Hotjar Tracking Code for www.umbc.edu -->
+    <script>
+       (function(h,o,t,j,a,r){
+           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+           h._hjSettings={hjid:860897,hjsv:6};
+           a=o.getElementsByTagName('head')[0];
+           r=o.createElement('script');r.async=1;
+           r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+           a.appendChild(r);
+       })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+        </div>
+  </body>
+</html>
